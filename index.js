@@ -1,12 +1,13 @@
+// constant variable choices for RPs //
 const choices = ["rock", "paper", "scissors"];
-
+// random computer choice //
 function getComputerChoice() {
   const RNG = Math.floor(Math.random() * choices.length);
   return choices[RNG];
 }
-
+// print computer choice //
 console.log(getComputerChoice());
-
+// winners and losers determination //
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   if (playerSelection=== computerSelection){
@@ -26,7 +27,7 @@ function playRound(playerSelection, computerSelection) {
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
-
+// score card counter //
 function game() {
   let playerScore = 0;
   let computerScore = 0;
@@ -38,7 +39,7 @@ function game() {
     console.log(`Round ${i + 1}:`);
     console.log(`Player chose ${playerSelection}`)
     console.log(`Computer chose ${computerSelection}`)
-  
+  // print statements for each resolution //
     const roundResult = playRound(playerSelection,computerSelection);
 
     if (roundResult === "you win!") {
@@ -51,7 +52,7 @@ function game() {
     }
     console.log(`Scores after round ${i +1}: Player - ${playerScore}, Computer - ${computerScore}`);
 }
-
+// end game message//
  if (playerScore > computerScore) {
         console.log("Congratulations, you won the game!");
     } else if (playerScore < computerScore) {
